@@ -6,12 +6,14 @@ app = Flask(__name__)
 wsgi_app = app.wsgi_app
 
 def conexao():
-   server = 'faisp.database.windows.net' 
-   database = 'FAISP' 
-   usernamedb = 'luigi' 
-   password = 'Senha1234!@#$' 
-   cnxn = pyodbc.connect('DRIVER={SQL Server};SERVER='+server+';DATABASE='+database+';UID='+usernamedb+';PWD='+ password)
-   return cnxn.cursor()
+	server = 'faisp.database.windows.net'
+	database = 'FAISP'
+	username = 'luigi'
+	password = 'Senha1234!@#$'
+	driver= '{ODBC Driver 17 for SQL Server}'
+	cnxn = pyodbc.connect('DRIVER='+driver+';SERVER='+server+';PORT=1433;DATABASE='+database+';UID='+username+';PWD='+ password)
+	return cnxn.cursor()
+   
 
 @app.route('/novo')
 def novo():
