@@ -4,7 +4,7 @@ certifi==2018.8.24
 chardet==3.0.4
 Click==7.0
 command-not-found==0.3
-cryptography==2.3
+cryptography==3.2
 cupshelpers==1.0
 distro-info==0.18
 entrypoints==0.2.3.post3
